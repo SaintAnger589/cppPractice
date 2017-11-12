@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <fstream>
 #include <ctime>
+#include <algorithm> 
 #define numNodes 200
 #define debug 0
 
@@ -75,9 +76,11 @@ void printGraph(struct Graph* graph)
 //creating combine
 struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
 	//size of new graph is one less
-	//std::cout<<"printgraph in combinegraph\n";
-	//printGraph(graph);
-	int valNew = graph->V;
+	if (debug){
+        std::cout<<"printgraph in combinegraph\n";
+        printGraph(graph);
+    }
+    int valNew = graph->V;
 	struct Graph *graphNew = createGraph(valNew);
 	if (debug){
         std::cout<<"newGraph returned \n";
@@ -102,8 +105,11 @@ struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
 	    std::cout<<"reached end of index1\n";
 	//if (minindex == index1){
 		pCrawl->next = graph->array[index2].head;
-        //std::cout<<"after adding index2 to index1"<<"\n";
-        //printGraph(graphNew);
+        if (debug){
+            std::cout<<"after adding index2 to index1"<<"\n";
+            printGraph(graphNew);    
+        }
+        
 	//} else{
 	//	pCrawl->next = graph->array[index1].head;
 	//}
@@ -138,14 +144,16 @@ struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
     }
     graphNew->V = graphNew->V - 1;
     if (debug)
-        std::cout<<"After removing index2\n";
-    //printGraph(graphNew);
+        {
+            std::cout<<"After removing index2\n";
+            printGraph(graphNew);
+        }
     //reducing all values by 1 from index2
     for (i=0;i<graphNew->V;i++){
     	struct AdjListNode *pCrawl8 = graphNew->array[i].head;
     	while (pCrawl8 != NULL){
             if (pCrawl8->dest == index2)
-                pCrawl8->dest = pCrawl8->dest - index2;
+                pCrawl8->dest = pCrawl8->dest - index2 + index1;
     		if (pCrawl8->dest > index2){
     			pCrawl8->dest = pCrawl8->dest - 1;
     		}
@@ -153,8 +161,10 @@ struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
     	}
     }
     if (debug)
-        std::cout<<"After reducing the graph dest by 1\n";
-    //printGraph(graphNew);
+        {
+            std::cout<<"After reducing the graph dest by 1\n";
+            printGraph(graphNew);
+        }
 /*
     //changing all index2 to index1
     //std::cout<<"valNew = "<<valNew<<"\n";
@@ -192,20 +202,21 @@ struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
 */
 //removing cycles
     //for (i=0;i<graphNew->V;i++){
-        struct AdjListNode *pCrawl13 = graphNew->array[index1].head;
+        
         //checking for head
-        if (pCrawl13 != NULL){
+        //if (pCrawl13 != NULL){
             //std::cout<<"dest: "<<pCrawl13->dest<<"\n";
-            while (graphNew->array[index1].head->dest == index1){
-                //std::cout<<"inside the head\n";
-                //if (pCrawl2->next != NULL)
-                    //pCrawl13 = pCrawl13->next;
-                //while ()
-                graphNew->array[index1].head = graphNew->array[index1].head->next;
-                if (graphNew->array[index1].head == NULL)
-                    break;
-            }   
-        }
+        //for (i=0;i<graphNew->V;i++){
+             if (graphNew->array[index1].head != NULL){
+                while (graphNew->array[index1].head->dest == index1){
+                    graphNew->array[index1].head = graphNew->array[index1].head->next;
+                    if (graphNew->array[index1].head == NULL)
+                        break;
+                }   
+             } //if graphNew
+               
+        //} //i loop
+        struct AdjListNode *pCrawl13 = graphNew->array[index1].head;
         while (pCrawl13 != NULL){
             if (pCrawl13->next != NULL){   
                   if (pCrawl13->next->dest == index1){
@@ -224,8 +235,10 @@ struct Graph * combinegraph(struct Graph *graph, int index1, int index2){
 
     //graphNew->V = graphNew->V - 1;
     if (debug)
-        std::cout<<"After the iteration"<<"\n";
-    //printGraph(graphNew);
+        {
+            std::cout<<"After the iteration"<<"\n";
+            printGraph(graphNew);
+        }
 	return graphNew;
 }
 
@@ -297,7 +310,7 @@ int main()
 	int V = numNodes;
 	struct Graph* graph;
 	graph = createNewGraph();
-
+    //std::sort(graph->array[0], graph->array + graph->V);
  	std::cout<<"printing original graph \n";
     // print the adjacency list representation of the above graph
     //printGraph(graph);
@@ -340,17 +353,21 @@ int main()
 
     		//printGraph(graph2);	
     	}
-    	//std::cout<<"graph2->V = "<<graph2->V<<"\n";
-        int temp4 = calcsize(graph2);
+        if (debug){
+            std::cout<<"graph2->V = "<<graph2->V<<"\n";
+            printGraph(graph2);
+        }
+    	int temp4 = calcsize(graph2);
         if (temp4 < maxcut)
         	maxcut = temp4;
         temp3++; 
         //std::cout<<"temp4: "<<temp4<<"\n";   
         //graph = graph2;  
-    } while (temp3 < 600);
+    } while (temp3 < 60);
     //printGraph(graph2);
 
     //calculate size
+    // printGraph(graph2);
     std::cout<<"*****************\n";
     std::cout<<"maxcut = "<<maxcut<<"\n";
     std::cout<<"*****************\n";
