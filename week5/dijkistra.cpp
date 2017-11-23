@@ -68,7 +68,85 @@ using namespace std;
 	        printf("\n");
 	    }
 	}
+    // void dfs(struct Graph *graph, int *visited, vector<int>temp){
+    // 	while (temp.size() != 0){
+    // 	    int src = temp.back();
+    // 	    temp.pop_back();
+    // 	    struct AdjListNode *pCrawl = graph->array[src].head;
+    // 	    while(pCrawl != NULL){
+    // 	        if (!visited[pCrawl->dest]){
+    // 		        temp.push_back(pCrawl->dest);
+    // 		        visited[pCrawl->dest] = 1;
+    // 	        }	
+    // 	    pCrawl = pCrawl->next;
+    //         }	
+    // 	}
+    	
+    // }
+	void dfs(struct Graph *graph, int src){
+		vector<int> temp;
+		int *visited = (int *)malloc(sizeof(int)*graph->V);
+		for (int i=0;i<graph->V;i++){
+			visited[i] = 0;
+		}
+		temp.push_back(src);
+		visited[src] = 1;
+		while (temp.size() > 0){
+			int node = temp.back();
+			temp.pop_back();
+			cout<<(node + 1)<<endl;
+			struct AdjListNode *pCrawl = graph->array[node].head;
+			while (pCrawl){
+				if (!visited[pCrawl->dest]){
 
+					temp.push_back(pCrawl->dest);
+					visited[pCrawl->dest] = 1;
+				}
+				pCrawl = pCrawl->next;
+			}
+		}
+
+	}
+    
+    int calc_min_weight(struct Graph *graph, int src, int dest){
+    	
+    }
+    void pop_from(vector<int> &vminusx, int src){
+    	int len = vminusx.size();
+    	int i;
+    	for (i=0;i<len;i++){
+    		if (vminusx[i] == src){
+    			vminusx.erase(vminusx.begin() + i);
+    			break;
+    		}
+    	}
+    }
+    void dijkistra (struct Graph *graph, int src, int dest){
+    	vector<int> x; //for storing the x part of dijkistra
+    	vector<int> vminusx;
+    	/*
+    	int *minweight = (int *)malloc(sizeof(int)*graph->V);
+
+    	//assigning all weights to be 1000000
+    	for (int i=0;i<graph->V;i++){
+    		minweight[i] = 1000000;
+    	}
+    	*/
+    	//minweight of the dest to be 1000000 intially
+    	int minweight = 1000000;
+    	//putting all values in vminusx initially
+    	int i;
+    	for (i=0;i<graph->V;i++){
+    		vminusx.push_back(i); //i is analogous to all the nodes
+    	}
+    	//pop src from vminusx
+    	pop_from(vminusx,src);
+    	//adding src to x
+    	x.push_back(src);
+    	//calculating weights of dest
+    	minweight = calc_min_weight(graph, src, dest);
+
+    }
 	struct Graph* createNewGraph(){
 		int V = numNodes;
 		struct Graph *graph = createGraph(V);
@@ -134,6 +212,8 @@ using namespace std;
 		int V = numNodes;
 	    struct Graph* graph;
 		graph = createNewGraph();
-		printGraph(graph);
+		//printGraph(graph);
+		dfs(graph,0);
+
 		return 0;
 	}
