@@ -7,7 +7,7 @@
 #include <ctime>
 #include <algorithm> 
 
-#define numNodes 8
+#define numNodes 200
 
 using namespace std;
 
@@ -96,7 +96,7 @@ using namespace std;
 			temp.pop_back();
 			cout<<(node + 1)<<endl;
 			struct AdjListNode *pCrawl = graph->array[node].head;
-			while (pCrawl){
+			while (pCrawl != NULL){
 				if (!visited[pCrawl->dest]){
 
 					temp.push_back(pCrawl->dest);
@@ -108,22 +108,80 @@ using namespace std;
 
 	}
     
-    int calc_min_weight(struct Graph *graph, int src, int dest){
+    int* calc_min_weight(struct Graph *graph, int src, int dest){
     	
+    	cout<<"calcmin: src = "<<src<<endl;
+    	cout<<"calcmin: dest = "<<dest<<endl;
+    	int *visited = (int *) malloc(sizeof(int)*graph->V);
+    	vector<int> temp;
+    	int i;
+    	int flag = 0;
+    	int minw_temp = 0;
+    	int *minweight = (int *)malloc(sizeof(int)*graph->V);
+    	for (i=0;i<graph->V;i++){
+    		minweight[i] = 10000;
+    	}
+    	minweight[src] = 0;
+    	for (i=0;i<graph->V;i++){
+    		visited[i] = 0;
+    	}
+    	visited[src] = 1;
+    	temp.push_back(src);
+
+		while (temp.size() > 0){
+			cout<<"calcmin: temp.size = "<<temp.size()<<"\n";
+			int node = temp.back();
+			temp.pop_back();
+			cout<<"calcmin: node = "<<node<<endl;
+			struct AdjListNode *pCrawl = graph->array[node].head;
+			while (pCrawl != NULL){
+				if (pCrawl->weight + minweight[node] < minweight[pCrawl->dest]){
+					minweight[pCrawl->dest] = pCrawl->weight + minweight[node];
+					visited[pCrawl->dest] = 0;
+					temp.push_back(pCrawl->dest);
+				} else {
+					visited[pCrawl->dest] = 1;
+				}
+
+				// if (!visited[pCrawl->dest]){
+				// 	cout<<"pCrawl->dest = "<<pCrawl->dest<<endl;
+				// 	cout<<"calcmin: dest = "<<dest<<endl;
+				// 	if (pCrawl->dest == dest){
+				// 		if (flag == 0)
+				// 		    minw_temp += pCrawl->weight;
+				// 		cout<<"calcmin: dest reached, weight = "<<minw_temp<<"\n";
+    //                     if (minw_temp < minweight)
+    //                     	minweight = minw_temp;
+				// 	}
+				// 	else {
+				// 		cout<<"calcmin pCrawl->dest = "<<pCrawl->dest<<" dest = "<<dest<<endl;
+				// 		minw_temp +=  pCrawl->weight;
+				// 		temp.push_back(pCrawl->dest);
+				// 	    visited[pCrawl->dest] = 1;
+				// 	    flag = 1;
+				// 	} 
+
+				// }
+				pCrawl = pCrawl->next;
+			} //pcrawl
+		} //temp >0
+		return minweight;
     }
+
     void pop_from(vector<int> &vminusx, int src){
     	int len = vminusx.size();
     	int i;
-    	for (i=0;i<len;i++){
+    	for (i=0;i<len;i++) {
     		if (vminusx[i] == src){
     			vminusx.erase(vminusx.begin() + i);
     			break;
     		}
     	}
     }
-    void dijkistra (struct Graph *graph, int src, int dest){
+    int* dijkistra (struct Graph *graph, int src, int dest){
     	vector<int> x; //for storing the x part of dijkistra
     	vector<int> vminusx;
+    	int *minw = (int *)malloc(sizeof(int)*graph->V);
     	/*
     	int *minweight = (int *)malloc(sizeof(int)*graph->V);
 
@@ -144,15 +202,23 @@ using namespace std;
     	//adding src to x
     	x.push_back(src);
     	//calculating weights of dest
-    	minweight = calc_min_weight(graph, src, dest);
-
+    	for (i=1;i<graph->V;i++){
+    	    //minweight = calc_min_weight(graph, src, i);
+    	    minw = calc_min_weight(graph, src, i);
+    	    cout<<"dijkistra: minweight = "<<minweight<<endl;
+    	    pop_from(vminusx,i);
+    	    x.push_back(i);	
+    	    //minw[i] = minweight;
+    	}
+    	
+    	return minw;
     }
 	struct Graph* createNewGraph(){
 		int V = numNodes;
 		struct Graph *graph = createGraph(V);
 		//reading file
 		int iter = 0;
-		ifstream myfile("temp.txt");
+		ifstream myfile("dijkistra_data.txt");
 		string s;
 		int n;
 		int count_num = 2;
@@ -213,7 +279,12 @@ using namespace std;
 	    struct Graph* graph;
 		graph = createNewGraph();
 		//printGraph(graph);
-		dfs(graph,0);
+		//dfs(graph,0);
+		int *w = (int *)malloc(sizeof(int)*graph->V);
+		w = dijkistra(graph, 0,1);
+		for (int i=0;i<graph->V;i++){
+			cout<<"Weights of "<<i<<" = "<<w[i]<<"\n";
+		}
 
 		return 0;
 	}
