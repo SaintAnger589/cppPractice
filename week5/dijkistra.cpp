@@ -9,7 +9,7 @@
 #include <iterator>
 #include <stdio.h>
 
-#define numNodes 10
+#define numNodes 200
 
 using namespace std;
 
@@ -220,8 +220,8 @@ using namespace std;
 		struct Graph *graph = createGraph(V);
 		//reading file
 		int iter = 0;
-		//ifstream myfile("dijkistra_data.txt");
-		ifstream myfile("temp.txt");
+		ifstream myfile("dijkistra_data.txt");
+		//ifstream myfile("temp.txt");
 		string s;
 		int n;
 		int count_num = 2;
@@ -272,6 +272,21 @@ using namespace std;
 		}
 	return graph;
 	}
+	bool getnodeweight(int node){
+		bool res;
+		if (node == 6 
+			|| node == 36
+			|| node == 58
+			|| node == 81
+			|| node == 98
+			|| node == 114
+			|| node == 132
+			|| node == 164
+			|| node == 187
+			|| node == 196)
+			return true;
+		else return false;
+	}
 	int main(){
 		int V = numNodes;
 	    struct Graph* graph;
@@ -284,7 +299,8 @@ using namespace std;
 			cout<<"Weights of "<<i<<" = "<<w[i]<<"\n";
 		}
 		for (int i=0;i<graph->V;i++){
-			cout<<w[i]<<",";
+			if (getnodeweight(i))
+			    cout<<w[i]<<",";
 		}
 
 		return 0;
