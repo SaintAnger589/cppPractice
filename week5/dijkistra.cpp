@@ -1,13 +1,15 @@
-#include<iostream>
-#include<sstream>
-#include<string>
-#include<vector>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <vector>
 #include <stdlib.h>
 #include <fstream>
 #include <ctime>
 #include <algorithm> 
+#include <iterator>
+#include <stdio.h>
 
-#define numNodes 200
+#define numNodes 10
 
 using namespace std;
 
@@ -119,7 +121,7 @@ using namespace std;
     	int minw_temp = 0;
     	int *minweight = (int *)malloc(sizeof(int)*graph->V);
     	for (i=0;i<graph->V;i++){
-    		minweight[i] = 10000;
+    		minweight[i] = 1000000;
     	}
     	minweight[src] = 0;
     	for (i=0;i<graph->V;i++){
@@ -218,56 +220,52 @@ using namespace std;
 		struct Graph *graph = createGraph(V);
 		//reading file
 		int iter = 0;
-		ifstream myfile("dijkistra_data.txt");
+		//ifstream myfile("dijkistra_data.txt");
+		ifstream myfile("temp.txt");
 		string s;
 		int n;
 		int count_num = 2;
+		char node1[20000];
+		char sweight[10000];
+		std::vector<int> temp;
 		if (myfile.is_open()){
 			while(getline(myfile,s)){
-				count_num = 2;
-				std::vector<int> temp;
-				std::stringstream stream(s);
-				cout<<"stream"<<s<<"\n";
-				char c;
-				int len_string = s.size();
-
-				while (count_num < len_string){
-					n = s[count_num] - '0';
-					cout<<"n = "<<n<<"\n";
-					temp.push_back(n);
-					n = s[count_num+2] - '0';
-					cout<<"weight = "<<n<<"\n";
-					temp.push_back(n);
-					count_num = count_num + 4;
-				}
-				/*
-				while (stream >> n){
-					cout<<"edge"<<n<<"\n";
-					//count_num = count_num + 2;
-					//temp.push_back(n);
-					//if (!stream)
-					//	break;
-
-				} //while (stream >> n)
-				*/
+				istringstream buf(s);
+				istream_iterator<string> beg(buf), end;
+				vector<string> tokens(beg, end);
+				for(auto& p: tokens){
+                    //std::cout << '"' << p << '"' << '\n';
+                    int pos = p.find(",");
+                    if (pos < 0)
+                    	continue;
+                    int len_string = p.size();
+                    std::size_t length1 = p.copy(sweight, len_string, pos + 1);
+                    sweight[length1] = '\0'; 
+                    length1 = p.copy(node1,pos,0);
+                    //cout<<"length1 = "<<length1<<endl;
+                    node1[length1] = '\0';
+                    //cout<<"weight = "<<sweight<<endl;
+                    //cout<<"node = "<<node1<<endl;
+				 int node_extracted = atoi(node1);
+				 int weight_extracted = atoi(sweight);
+				 temp.push_back(node_extracted);
+				 temp.push_back(weight_extracted);
 			int len = temp.size();
 			//std::cout<<"len = "<<len<<"\n";
+		} //p auto
 			int temp2;
-			//for (temp2 = 0;temp2 <len;temp2++){
-				//std::cout<<"temp[0] = "<<temp[0]<<"\n";
-				//std::cout<<"temp[temp2] = "<<temp[temp2]<<"\n";
 				while (!temp.empty()){
 					int temp_weight = temp.back();
-					cout<<"temp_weight = "<<temp_weight<<"\t";
+					//cout<<"temp_weight = "<<temp_weight<<"\t";
 					temp.pop_back();
 					int temp7 = temp.back();
-					cout<<"temp7 = "<<temp7<<"\n";
+					//cout<<"temp7 = "<<temp7<<"\n";
 					temp.pop_back();
                     //if (temp7 != iter+1)
 					    addEdge(graph,iter,temp7-1,temp_weight);
 				}
 				iter++;
-			} //while
+		  } //while getline
 		} //if(myfile)
 		else{
 			cout<<"Unable to open File";
@@ -278,12 +276,15 @@ using namespace std;
 		int V = numNodes;
 	    struct Graph* graph;
 		graph = createNewGraph();
-		//printGraph(graph);
+		printGraph(graph);
 		//dfs(graph,0);
 		int *w = (int *)malloc(sizeof(int)*graph->V);
 		w = dijkistra(graph, 0,1);
 		for (int i=0;i<graph->V;i++){
 			cout<<"Weights of "<<i<<" = "<<w[i]<<"\n";
+		}
+		for (int i=0;i<graph->V;i++){
+			cout<<w[i]<<",";
 		}
 
 		return 0;
