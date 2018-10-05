@@ -1,0 +1,727 @@
+0
+weight = 8
+countdfs = 8
+7
+weight = 7
+countdfs = 15
+8
+weight = 6
+countdfs = 21
+6
+weight = 2
+countdfs = 23
+5
+weight = 10
+countdfs = 33
+4
+weight = 9
+countdfs = 42
+3
+weight = 7
+countdfs = 49
+2
+weight = 8
+countdfs = 57
+1
+returning back
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 37
+3
+weight = 9
+countdfs = 46
+4
+returning back
+weight = 7
+countdfs = 44
+2
+weight = 8
+countdfs = 52
+1
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 27
+2
+weight = 7
+countdfs = 34
+3
+weight = 9
+countdfs = 43
+4
+returning back
+returning back
+weight = 8
+countdfs = 35
+1
+returning back
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 17
+2
+weight = 7
+countdfs = 24
+3
+weight = 9
+countdfs = 33
+4
+weight = 10
+countdfs = 43
+5
+weight = 2
+countdfs = 45
+6
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 38
+5
+weight = 2
+countdfs = 40
+6
+returning back
+weight = 10
+countdfs = 48
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 21
+5
+weight = 2
+countdfs = 23
+6
+returning back
+weight = 10
+countdfs = 31
+4
+weight = 9
+countdfs = 40
+3
+returning back
+returning back
+weight = 14
+countdfs = 35
+3
+weight = 9
+countdfs = 44
+4
+returning back
+returning back
+returning back
+weight = 8
+countdfs = 25
+1
+returning back
+returning back
+returning back
+weight = 1
+countdfs = 9
+6
+weight = 6
+countdfs = 15
+8
+weight = 2
+countdfs = 17
+2
+weight = 7
+countdfs = 24
+3
+weight = 9
+countdfs = 33
+4
+weight = 10
+countdfs = 43
+5
+returning back
+returning back
+weight = 14
+countdfs = 38
+5
+weight = 10
+countdfs = 48
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 21
+5
+weight = 10
+countdfs = 31
+4
+weight = 9
+countdfs = 40
+3
+returning back
+returning back
+weight = 14
+countdfs = 35
+3
+weight = 9
+countdfs = 44
+4
+returning back
+returning back
+returning back
+weight = 8
+countdfs = 25
+1
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 11
+5
+weight = 10
+countdfs = 21
+4
+weight = 9
+countdfs = 30
+3
+weight = 7
+countdfs = 37
+2
+weight = 2
+countdfs = 39
+8
+returning back
+weight = 8
+countdfs = 45
+1
+returning back
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 25
+3
+weight = 9
+countdfs = 34
+4
+returning back
+weight = 7
+countdfs = 32
+2
+weight = 2
+countdfs = 34
+8
+returning back
+weight = 8
+countdfs = 40
+1
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 15
+2
+weight = 7
+countdfs = 22
+3
+weight = 9
+countdfs = 31
+4
+returning back
+returning back
+weight = 2
+countdfs = 17
+8
+returning back
+weight = 8
+countdfs = 23
+1
+returning back
+returning back
+returning back
+returning back
+weight = 11
+countdfs = 19
+1
+weight = 8
+countdfs = 27
+2
+weight = 7
+countdfs = 34
+3
+weight = 9
+countdfs = 43
+4
+weight = 10
+countdfs = 53
+5
+weight = 2
+countdfs = 55
+6
+weight = 6
+countdfs = 61
+8
+returning back
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 48
+5
+weight = 2
+countdfs = 50
+6
+weight = 6
+countdfs = 56
+8
+returning back
+returning back
+weight = 10
+countdfs = 58
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 31
+5
+weight = 2
+countdfs = 33
+6
+weight = 6
+countdfs = 39
+8
+returning back
+returning back
+weight = 10
+countdfs = 41
+4
+weight = 9
+countdfs = 50
+3
+returning back
+returning back
+weight = 14
+countdfs = 45
+3
+weight = 9
+countdfs = 54
+4
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 29
+8
+weight = 6
+countdfs = 35
+6
+weight = 2
+countdfs = 37
+5
+weight = 10
+countdfs = 47
+4
+weight = 9
+countdfs = 56
+3
+returning back
+returning back
+weight = 14
+countdfs = 51
+3
+weight = 9
+countdfs = 60
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 4
+1
+weight = 8
+countdfs = 12
+2
+weight = 7
+countdfs = 19
+3
+weight = 9
+countdfs = 28
+4
+weight = 10
+countdfs = 38
+5
+weight = 2
+countdfs = 40
+6
+weight = 1
+countdfs = 41
+7
+weight = 7
+countdfs = 48
+8
+returning back
+returning back
+weight = 6
+countdfs = 46
+8
+weight = 7
+countdfs = 53
+7
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 33
+5
+weight = 2
+countdfs = 35
+6
+weight = 1
+countdfs = 36
+7
+weight = 7
+countdfs = 43
+8
+returning back
+returning back
+weight = 6
+countdfs = 41
+8
+weight = 7
+countdfs = 48
+7
+returning back
+returning back
+returning back
+weight = 10
+countdfs = 43
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 16
+5
+weight = 2
+countdfs = 18
+6
+weight = 1
+countdfs = 19
+7
+weight = 7
+countdfs = 26
+8
+returning back
+returning back
+weight = 6
+countdfs = 24
+8
+weight = 7
+countdfs = 31
+7
+returning back
+returning back
+returning back
+weight = 10
+countdfs = 26
+4
+weight = 9
+countdfs = 35
+3
+returning back
+returning back
+weight = 14
+countdfs = 30
+3
+weight = 9
+countdfs = 39
+4
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 14
+8
+weight = 7
+countdfs = 21
+7
+weight = 1
+countdfs = 22
+6
+weight = 2
+countdfs = 24
+5
+weight = 10
+countdfs = 34
+4
+weight = 9
+countdfs = 43
+3
+returning back
+returning back
+weight = 14
+countdfs = 38
+3
+weight = 9
+countdfs = 47
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 6
+countdfs = 20
+6
+weight = 1
+countdfs = 21
+7
+returning back
+weight = 2
+countdfs = 22
+5
+weight = 10
+countdfs = 32
+4
+weight = 9
+countdfs = 41
+3
+returning back
+returning back
+weight = 14
+countdfs = 36
+3
+weight = 9
+countdfs = 45
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 11
+countdfs = 15
+7
+weight = 7
+countdfs = 22
+8
+weight = 6
+countdfs = 28
+6
+weight = 2
+countdfs = 30
+5
+weight = 10
+countdfs = 40
+4
+weight = 9
+countdfs = 49
+3
+weight = 7
+countdfs = 56
+2
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 44
+3
+weight = 9
+countdfs = 53
+4
+returning back
+weight = 7
+countdfs = 51
+2
+returning back
+returning back
+weight = 4
+countdfs = 34
+2
+weight = 7
+countdfs = 41
+3
+weight = 9
+countdfs = 50
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 24
+2
+weight = 7
+countdfs = 31
+3
+weight = 9
+countdfs = 40
+4
+weight = 10
+countdfs = 50
+5
+weight = 2
+countdfs = 52
+6
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 45
+5
+weight = 2
+countdfs = 47
+6
+returning back
+weight = 10
+countdfs = 55
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 28
+5
+weight = 2
+countdfs = 30
+6
+returning back
+weight = 10
+countdfs = 38
+4
+weight = 9
+countdfs = 47
+3
+returning back
+returning back
+weight = 14
+countdfs = 42
+3
+weight = 9
+countdfs = 51
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 1
+countdfs = 16
+6
+weight = 6
+countdfs = 22
+8
+weight = 2
+countdfs = 24
+2
+weight = 7
+countdfs = 31
+3
+weight = 9
+countdfs = 40
+4
+weight = 10
+countdfs = 50
+5
+returning back
+returning back
+weight = 14
+countdfs = 45
+5
+weight = 10
+countdfs = 55
+4
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 28
+5
+weight = 10
+countdfs = 38
+4
+weight = 9
+countdfs = 47
+3
+returning back
+returning back
+weight = 14
+countdfs = 42
+3
+weight = 9
+countdfs = 51
+4
+returning back
+returning back
+returning back
+returning back
+returning back
+weight = 2
+countdfs = 18
+5
+weight = 10
+countdfs = 28
+4
+weight = 9
+countdfs = 37
+3
+weight = 7
+countdfs = 44
+2
+weight = 2
+countdfs = 46
+8
+returning back
+returning back
+returning back
+returning back
+weight = 14
+countdfs = 32
+3
+weight = 9
+countdfs = 41
+4
+returning back
+weight = 7
+countdfs = 39
+2
+weight = 2
+countdfs = 41
+8
+returning back
+returning back
+returning back
+weight = 4
+countdfs = 22
+2
+weight = 7
+countdfs = 29
+3
+weight = 9
+countdfs = 38
+4
+returning back
+returning back
+weight = 2
+countdfs = 24
+8
+returning back
+returning back
+returning back
+returning back
+returning back
+returning back
+res = 1
+count = 0

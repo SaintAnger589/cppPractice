@@ -1,0 +1,109 @@
+# depslib dependency file v1.0
+1532018988 source:c:\users\gaus\documents\new folder\graphs\graphs.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+
+1532107781 source:c:\users\gaus\documents\new folder\graphs\bfs.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1533852523 source:c:\users\gaus\documents\new folder\graphs\dfs.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1532391011 source:c:\users\gaus\documents\new folder\graphs\mothervertex.cpp
+	<iostream>
+	<stdio.h>
+	<malloc.h>
+	<list>
+
+1532625133 source:c:\users\gaus\documents\new folder\graphs\topological.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1533055296 source:c:\users\gaus\documents\new folder\graphs\transitiveclosure.cpp
+	<iostream>
+	<stdio.h>
+	<vector>
+	<list>
+
+1533055174 source:c:\users\gaus\documents\new folder\graphs\temp.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1534525869 source:c:\users\gaus\documents\new folder\graphs\allpossiblenodes.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1535476812 source:c:\users\gaus\documents\new folder\graphs\possiblepaths.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1535653604 source:c:\users\gaus\documents\new folder\graphs\oddcycles.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1535731855 source:c:\users\gaus\documents\new folder\graphs\bipartite.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1536258293 source:c:\users\gaus\documents\new folder\graphs\cycleconstantlength.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1536702118 source:c:\users\gaus\documents\new folder\graphs\bellman_ford.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1538512835 source:c:\users\gaus\documents\new folder\graphs\allpaths.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1538612044 source:c:\users\gaus\documents\new folder\graphs\oddsum.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
+1538699601 source:c:\users\gaus\documents\new folder\graphs\oddcycleweight.cpp
+	<stdio.h>
+	<stdlib.h>
+	<iostream>
+	<vector>
+	<list>
+
